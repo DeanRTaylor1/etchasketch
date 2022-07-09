@@ -44,6 +44,7 @@ background-color: gray;
     display: flex;
     align-items: center;
     justify-content: center;
+    
     gap: 100px;
     padding: 100px;
     height: 100%;
@@ -55,6 +56,8 @@ background-color: gray;
 
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 14px;
 
 
@@ -105,4 +108,17 @@ height: 450px;
     
     
     
+    }
+
+    #sizeValueBox {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+
+
+
     }
