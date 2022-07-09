@@ -1,6 +1,10 @@
 const grid = document.querySelector("#grid");
 const reset = document.querySelector("#reset");
 const rainbow = document.querySelector("#rainbow");
+const tenGrid = document.querySelector("#tenGrid");
+const sixteenGrid = document.querySelector("#sixteenGrid");
+const sixfourGrid = document.querySelector("#sixfourGrid");
+let currentgridSize = 257;
 let bgColor = 'black'
 
 
@@ -35,7 +39,7 @@ grid.addEventListener('mouseover', event => {
     if (bgColor === 'black') {
    
        
-        target.style.backgroundColor =  bgColor;
+        target.style.backgroundColor =  'black';
     }
     
     else { 
@@ -54,7 +58,9 @@ grid.addEventListener('mouseover', event => {
 
 reset.addEventListener('click', () => {
 
-    for(let i = 1; i < 257; i++){
+    bgColor = 'black';
+
+    for(let i = 1; i < (currentgridSize + 1); i++){
 
         let currentBox = document.getElementById(`${i}`);
 
@@ -62,7 +68,7 @@ reset.addEventListener('click', () => {
 
 }
 
-bgColor = 'black';
+    
 
 
 });
@@ -70,6 +76,70 @@ bgColor = 'black';
 rainbow.addEventListener('click', () => {  
 
         bgColor = rgb;
+
+});
+
+
+
+tenGrid.addEventListener('click', () => {  
+
+    grid.innerHTML = "";
+    grid.style.gridTemplateColumns = "repeat(10, 1fr)";
+    grid.style.gridTemplateRows= "repeat(10, 1fr)";
+
+    for(let i = 1; i < 101; i++){
+
+        
+
+        grid.innerHTML += `<div class= grid-element id=${i} ;></div>`;}
+
+        currentgridSize = 101;
+
+    
+    
+
+});
+
+sixteenGrid.addEventListener('click', () => {  
+
+    grid.innerHTML = "";
+    grid.style.gridTemplateColumns = "repeat(16, 1fr)";
+    grid.style.gridTemplateRows= "repeat(16, 1fr)";
+
+    for(let i = 1; i < 257; i++){
+
+        
+
+        grid.innerHTML += `<div class= grid-element id=${i} ;></div>`;}
+
+        currentgridSize = 257;
+
+    
+    
+
+});
+
+sixfourGrid.addEventListener('click', () => {  
+
+    grid.innerHTML = "";
+    grid.style.gridTemplateColumns = "repeat(64, 1fr)";
+    grid.style.gridTemplateRows= "repeat(64, 1fr)";
+
+    for(let i = 1; i < 4097; i++){
+
+        
+
+        const gridElement = document.createElement('div')
+        gridElement.classList.add('grid-element')
+        //gridElement.setAttribute(id,(${i}));
+        grid.appendChild(gridElement)
+
+}
+
+        currentgridSize = 4097;
+
+    
+    
 
 });
 
